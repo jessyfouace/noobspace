@@ -122,6 +122,10 @@ textarea {
 /* Large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {}
 
+/* ##################################################################### */
+/* ########################       GLOBAL       ######################### */
+/* ##################################################################### */
+
 @font-face {
     font-family: "Montserrat";
     src: url(../assets/font/Montserrat-Bold.ttf);
@@ -130,6 +134,16 @@ textarea {
 * {
     font-family: "Montserrat";
 }
+
+body {
+    max-width: 1200px;
+    display: block;
+    margin: auto;
+}
+
+/* ##################################################################### */
+/* ########################       NAV BAR      ######################### */
+/* ##################################################################### */
 
 nav {
     background: #3a3a80;
@@ -170,6 +184,10 @@ i {
     color: #666;
 }
 
+.nav2 a:hover {
+    color: #3a3a80;
+}
+
 div[class="nav2 overflow-y-hidden col-12 mx-0 px-0 text-center bg-white"] {
     margin-top: 56px;
 }
@@ -178,18 +196,40 @@ div[class="nav2 overflow-y-hidden col-12 mx-0 px-0 text-center bg-white"] {
     width: 30px;
 }
 
+/* ##################################################################### */
+/* ########################     ACTU PAGE      ######################### */
+/* ##################################################################### */
+
 h1 {
     font-size: 22px;
 }
 
-.actu,
-tr {
+.actu {
     border-bottom: 1px solid #666;
 }
 
 .actu:hover {
     background: #f8f8fa;
     cursor: pointer;
+}
+
+tr {
+    border-top: 1px solid #666;
+}
+
+h1 {
+    color: #3a3a80;
+    font-weight: bold;
+}
+
+.bgth {
+    background: #3a3a80;
+    color: white;
+    padding: 10px;
+}
+
+.colorpurple {
+    color: #3a3a80;
 }
 
 /* ==========================================================================
