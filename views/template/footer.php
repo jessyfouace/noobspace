@@ -3,6 +3,7 @@
   <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.3.1.min.js"><\/script>')</script>
   <script src="../assets/js/plugins.js"></script>
   <script src="../assets/js/main.js"></script>
+  <script src="../assets/bootstrap/js/bootstrap.min.js"></script>
 
   <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
   <script>
