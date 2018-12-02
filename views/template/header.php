@@ -23,7 +23,7 @@
 
 <nav class="navbar navbar-expand-lg fixed-top" role="navigation">
     <div class="container col-12">
-        <a class="navbar-brand" href="#"><i class="fas fa-headset"> NOOBSPACE</i></a>
+        <a class="navbar-brand" href="index.php"><i class="fas fa-headset"> NOOBSPACE</i></a>
         <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
             &#9776;
         </button>
