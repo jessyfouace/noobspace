@@ -141,9 +141,24 @@ body {
     margin: auto;
 }
 
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    text-decoration: none;
+    color: black;
+}
+
 /* ##################################################################### */
 /* ########################       NAV BAR      ######################### */
 /* ##################################################################### */
+
+.navbar-toggler {
+    color: #ddd;
+}
+
 
 nav {
     background: #3a3a80;
@@ -205,7 +220,7 @@ h1 {
 }
 
 .actu {
-    border-bottom: 1px solid #666;
+    border-bottom: 1px solid #666 !important;
 }
 
 .actu:hover {
@@ -218,7 +233,7 @@ tr {
 }
 
 h1 {
-    color: #3a3a80;
+    color: #3a3a80 !important;
     font-weight: bold;
 }
 
@@ -229,7 +244,23 @@ h1 {
 }
 
 .colorpurple {
-    color: #3a3a80;
+    color: #3a3a80 !important;
+}
+
+h2 {
+    font-size: 20px;
+}
+
+.message {
+    position: relative;
+    bottom: 9px;
+    border-bottom: 1px solid #666;
+    border-left: 1px solid #666;
+    border-right: 1px solid #666;
+}
+
+.borderbottom {
+    border-bottom: 1px solid #666;
 }
 
 /* ==========================================================================
