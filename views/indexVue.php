@@ -23,7 +23,7 @@
       foreach ($takeCommentary as $commentary) {
           if ($commentary->getIdActu() == $actu->getId()) {
               $count = $count + 1; ?>
-                    <?php
+                          <?php
           }
       } ?>
             <div class="col-12 text-right m-0 p-0"><i class="far fa-comment colorpurple"> <?php echo $count; ?> Commentaire</i></div>

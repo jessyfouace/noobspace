@@ -80,10 +80,12 @@ class ActualityManager
         return $arrayActus;
     }
 
-    public function addUser(User $user)
+    public function addCommentary(Commentary $commentary)
     {
-        $query = $this->getBdd()->prepare('INSERT INTO user(pseudo) VALUES(:pseudo)');
-        $query->bindValue(':pseudo', $user->getPseudo(), PDO::PARAM_STR);
+        $query = $this->getBdd()->prepare('INSERT INTO actucomments(nameCommentary, commentary, idActu) VALUES(:nameCommentary, :commentary, :idActu)');
+        $query->bindValue(':nameCommentary', $commentary->getNameCommentary(), PDO::PARAM_STR);
+        $query->bindValue(':commentary', $commentary->getCommentary(), PDO::PARAM_STR);
+        $query->bindValue(':idActu', $commentary->getIdActu(), PDO::PARAM_INT);
         $query->execute();
     }
 

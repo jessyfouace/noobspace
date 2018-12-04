@@ -12,15 +12,15 @@
       <p><?php echo $actu->getDate(); ?></p>
       <p class="borderbottom pb-4">Créer part: <?php echo $actu->getCreator(); ?></p>
 
-      <form class="pt-4" action="" method="post">
+      <form class="pt-4" action="article.php?index=<?php echo $actu->getId(); ?>&verif=true" method="post">
         <textarea name="commentary" id="" class="col-12" rows="5" placeholder="Ajouter un commentaire"></textarea>
         <input type="submit" value="Envoyer">
       </form>
       
       <?php foreach ($takeCommentaryByActuId as $commentary) {
           ?>
-          <h2 class="bgth mt-4 p-2">Pseudo: <?php echo $commentary->getNameCommentary(); ?></h2>
-          <p class="message p-2">Message: <?php echo $commentary->getCommentary(); ?></p>
+          <h2 class="bgth mt-4 p-2"><?php echo $commentary->getNameCommentary(); ?></h2>
+          <p class="message p-2"><?php echo $commentary->getCommentary(); ?></p>
       <?php
       } ?>
   <?php
