@@ -66,6 +66,17 @@ class UserManager
         }
     }
 
+    public function getUserByName(string $name)
+    {
+        $query = $this->getBdd()->prepare('SELECT * FROM user WHERE name = :name');
+        $query->bindValue(':name', $name, PDO::PARAM_INT);
+        $query->execute();
+        $user = $query->fetchAll(PDO::FETCH_ASSOC);
+        foreach ($user as $getUser) {
+            return new User($getUser);
+        }
+    }
+
     /**
      * Get the value of _bdd
      */

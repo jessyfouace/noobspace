@@ -19,15 +19,15 @@
       
       <?php foreach ($takeCommentaryByActuId as $commentary) {
           ?>
-          <h2 class="bgth mt-4 p-2"><?php echo $commentary->getNameCommentary(); ?></h2>
-          <?php if (!empty($_SESSION['admin'])) {
+              <h2 class="mt-4 p-2 bgth"><a class="bgth p-0" href="profil.php?name=<?php echo $commentary->getNameCommentary(); ?>"><?php echo $commentary->getNameCommentary(); ?></a></h2>
+              <?php if (!empty($_SESSION['admin'])) {
               if ($_SESSION['admin'] == 1) {
                   ?>
-                <form action="article.php?index=<?php echo $actu->getId(); ?>&commentary=<?php echo $commentary->getId(); ?>" method="post" class="adminremove col-12 text-right">
-                    <input type="hidden" name="id" value="<?php $commentary->getId(); ?>">
-                    <input type="submit" value="Supprimer" class="font-weight-bold colorwhite buttonremove">
-                </form>
-              <?php
+            <form action="article.php?index=<?php echo $actu->getId(); ?>&commentary=<?php echo $commentary->getId(); ?>" method="post" class="col-12 text-right position-absolute">
+                <input type="hidden" name="id" value="<?php $commentary->getId(); ?>">
+                <input type="submit" value="Supprimer" class="font-weight-bold colorwhite buttonremove pr-4">
+            </form>
+            <?php
               }
           } ?>
           <p class="message p-2"><?php echo $commentary->getCommentary(); ?></p>

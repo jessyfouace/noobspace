@@ -50,6 +50,9 @@
 } else {
         ?>
                 <li class="dropdown order-1">
+                    <li class="nav-item"><a class="nav-link" href="profil.php"><span> Profil</span></a></li>
+                </li>
+                <li class="dropdown order-1">
                     <li class="nav-item"><a class="nav-link" href="disconnect.php"><span> Se deconnecter</span></a></li>
                 </li>
 <?php

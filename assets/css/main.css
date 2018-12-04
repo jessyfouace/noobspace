@@ -253,7 +253,7 @@ h2 {
 
 .message {
     position: relative;
-    bottom: 35px;
+    bottom: 9px;
     border-bottom: 1px solid #666;
     border-left: 1px solid #666;
     border-right: 1px solid #666;
@@ -266,10 +266,21 @@ h2 {
 .buttonremove {
     background: inherit;
     border: none;
+    position: relative;
+    top: -40px;
 }
 
 .borderbottom {
     border-bottom: 1px solid #666;
+}
+
+.sizeinfo {
+    font-size: 20px;
+}
+
+.adminremove {
+    position: absolute;
+
 }
 
 /* ##################################################################### */
@@ -348,13 +359,19 @@ h2 {
     color: green;
 }
 
-.sizeinfo {
+/* ##################################################################### */
+/* ########################    PROFIL PAGE     ######################### */
+/* ##################################################################### */
+
+.avatarprofil {
+    width: 75px;
+    height: 75px;
     font-size: 20px;
+    padding-top: 20px;
 }
 
-.adminremove {
-    position: relative;
-    bottom: 38px;
+.bgth:hover {
+    color: white !important;
 }
 
 /* ==========================================================================
