@@ -20,6 +20,16 @@
       <?php foreach ($takeCommentaryByActuId as $commentary) {
           ?>
           <h2 class="bgth mt-4 p-2"><?php echo $commentary->getNameCommentary(); ?></h2>
+          <?php if (!empty($_SESSION['admin'])) {
+              if ($_SESSION['admin'] == 1) {
+                  ?>
+                <form action="article.php?index=<?php echo $actu->getId(); ?>&commentary=<?php echo $commentary->getId(); ?>" method="post" class="adminremove col-12 text-right">
+                    <input type="hidden" name="id" value="<?php $commentary->getId(); ?>">
+                    <input type="submit" value="Supprimer" class="font-weight-bold colorwhite buttonremove">
+                </form>
+              <?php
+              }
+          } ?>
           <p class="message p-2"><?php echo $commentary->getCommentary(); ?></p>
       <?php
       } ?>

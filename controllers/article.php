@@ -14,6 +14,8 @@ function chargerClasse($classname)
 }
 spl_autoload_register('chargerClasse');
 
+session_start();
+
 $title = "Noob Space: Détail Actualitées";
 
 $bdd = Database::BDD();
@@ -31,7 +33,7 @@ if (isset($_GET['verif'])) {
                 $takePost = htmlspecialchars(strip_tags(addslashes($_POST['commentary'])));
                 $nextLineTakePost = nl2br($takePost);
                 $newCommentary = new Commentary([
-                    'nameCommentary' => 'Rayteur',
+                    'nameCommentary' => $_SESSION['name'],
                     'commentary' => $nextLineTakePost,
                     'idActu' => $_GET['index']
                 ]);
@@ -43,6 +45,18 @@ if (isset($_GET['verif'])) {
         }
     } else {
         header('location: article.php?index=' . $_GET['index'] . '');
+    }
+}
+
+if (!empty($_SESSION['admin'])) {
+    if ($_SESSION['admin'] == 1) {
+        if (isset($_GET['commentary'])) {
+            $idCommentary = htmlspecialchars($_GET['commentary']);
+            $idIndex = htmlspecialchars($_GET['index']);
+            $removeCom = $actuManager->removeCommentaryByActuId($idCommentary);
+            $actuManager->removeCommentary($removeCom);
+            header('location: article.php?index=' . $idIndex . '');
+        }
     }
 }
 

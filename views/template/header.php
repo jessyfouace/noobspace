@@ -32,14 +32,28 @@
                 <li class="nav-item"><a href="index.php" class="nav-link">Actu</a></li>
                 <li class="nav-item"><a href="#" class="nav-link">Forum</a></li>
                 <li class="nav-item"><a href="#" class="nav-link">Top Jeux</a></li>
+                <?php if (!empty($_SESSION['admin'])) {
+    if ($_SESSION['admin'] == 1) {
+        ?>
+                <li class="nav-item"><a href="#" class="nav-link">Pannel Admin</a></li>
+                <?php
+    }
+} ?>
             </ul>
             <ul class="nav navbar-nav flex-row justify-content-between ml-auto">
+                <?php if (empty($_SESSION['name'])) {
+    ?>
                 <li class="dropdown order-1">
-                    <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-user"><span> Connexion</span></i></a></li>
+                    <li class="nav-item"><a class="nav-link" href="login.php"><i class="fas fa-user"><span> Connection</span></i></a></li>
                 </li>
+                <?php
+} else {
+        ?>
                 <li class="dropdown order-1">
-                    <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-user-plus"><span> Inscription</span></i></a></li>
+                    <li class="nav-item"><a class="nav-link" href="disconnect.php"><span> Se deconnecter</span></a></li>
                 </li>
+<?php
+    } ?>
             </ul>
         </div>
     </div>

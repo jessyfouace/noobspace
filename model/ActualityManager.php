@@ -65,6 +65,21 @@ class ActualityManager
         return $arrayCommentary;
     }
 
+    public function removeCommentaryByActuId(int $id)
+    {
+        $arrayCommentary;
+        $query = $this->getBdd()->prepare('SELECT * FROM actucomments WHERE id = :id ORDER BY id DESC');
+        $query->bindValue('id', $id, PDO::PARAM_INT);
+        $query->execute();
+        $comments = $query->fetchAll(PDO::FETCH_ASSOC);
+
+        foreach ($comments as $comment) {
+            $arrayCommentary = new Commentary($comment);
+        }
+
+        return $arrayCommentary;
+    }
+
     public function getSpecialGame($game)
     {
         $arrayActus = [];
@@ -86,6 +101,13 @@ class ActualityManager
         $query->bindValue(':nameCommentary', $commentary->getNameCommentary(), PDO::PARAM_STR);
         $query->bindValue(':commentary', $commentary->getCommentary(), PDO::PARAM_STR);
         $query->bindValue(':idActu', $commentary->getIdActu(), PDO::PARAM_INT);
+        $query->execute();
+    }
+
+    public function removeCommentary(Commentary $commentary)
+    {
+        $query = $this->getBdd()->prepare('DELETE FROM actucomments WHERE id = :id');
+        $query->bindValue(':id', $commentary->getId(), PDO::PARAM_STR);
         $query->execute();
     }
 

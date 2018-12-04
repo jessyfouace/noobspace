@@ -1,6 +1,6 @@
 <table class="col-4 d-none d-md-block">
         <tbody>
-          <tr>
+          <!-- <tr>
             <th class="bgth">
               Articles les plus commentés (2)
             </th>
@@ -22,7 +22,7 @@
             </div>
               <p>Le Winter Royale organisé par Epic sur Fortnite et qui comprenait 1 million de dollar de cash prize est terminé. Le jeune français Skite l'a emporté et il repart avec 75 000$. Retrouvez le classement final.</p>
             </th>
-          </tr>
+          </tr> -->
 
           <tr>
             <th class="bgth">
