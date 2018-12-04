@@ -29,17 +29,34 @@
         </button>
         <div class="collapse navbar-collapse" id="exCollapsingNavbar">
             <ul class="nav navbar-nav">
-                <li class="nav-item"><a href="#" class="nav-link">Actu</a></li>
+                <li class="nav-item"><a href="index.php" class="nav-link">Actu</a></li>
                 <li class="nav-item"><a href="#" class="nav-link">Forum</a></li>
                 <li class="nav-item"><a href="#" class="nav-link">Top Jeux</a></li>
+                <?php if (!empty($_SESSION['admin'])) {
+    if ($_SESSION['admin'] == 1) {
+        ?>
+                <li class="nav-item"><a href="#" class="nav-link">Pannel Admin</a></li>
+                <?php
+    }
+} ?>
             </ul>
             <ul class="nav navbar-nav flex-row justify-content-between ml-auto">
+                <?php if (empty($_SESSION['name'])) {
+    ?>
                 <li class="dropdown order-1">
-                    <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-user"><span> Connexion</span></i></a></li>
+                    <li class="nav-item"><a class="nav-link" href="login.php"><i class="fas fa-user"><span> Connection</span></i></a></li>
+                </li>
+                <?php
+} else {
+        ?>
+                <li class="dropdown order-1">
+                    <li class="nav-item"><a class="nav-link" href="profil.php"><span> Profil</span></a></li>
                 </li>
                 <li class="dropdown order-1">
-                    <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-user-plus"><span> Inscription</span></i></a></li>
+                    <li class="nav-item"><a class="nav-link" href="disconnect.php"><span> Se deconnecter</span></a></li>
                 </li>
+<?php
+    } ?>
             </ul>
         </div>
     </div>
@@ -47,14 +64,14 @@
 
 <div class="nav2 overflow-y-hidden col-12 mx-0 px-0 text-center bg-white">
   <b>   
-      <a href="" class="col-4"><img src="../assets/img/fortnite.png">Fortnite</a>
-      <a href="" class="col-4"><img src="../assets/img/leagueoflegend.png">League of Legends</a>
-      <a href="" class="col-4"><img src="../assets/img/fifa.png">Fifa 19</a>
-      <a href="" class="col-4"><img src="../assets/img/worldofwarcraft.png">World Of Warcraft</a>
-      <a href="" class="col-4"><img src="../assets/img/hearthstone.png">HearthStone</a>
-      <a href="" class="col-4"><img src="../assets/img/overwatch.png">Overwatch</a>
-      <a href="" class="col-4"><img src="../assets/img/starcraft.png">Starcraft</a>
-      <a href="" class="col-4"><img src="../assets/img/diablo.png">Diablo 3</a>
+      <a href="index.php?game=fortnite" class="col-4"><img src="../assets/img/fortnite.png">Fortnite</a>
+      <a href="index.php?game=leagueoflegend" class="col-4"><img src="../assets/img/leagueoflegend.png">League of Legends</a>
+      <a href="index.php?game=fifa" class="col-4"><img src="../assets/img/fifa.png">Fifa 19</a>
+      <a href="index.php?game=worldofwarcraft" class="col-4"><img src="../assets/img/worldofwarcraft.png">World Of Warcraft</a>
+      <a href="index.php?game=hearthstone" class="col-4"><img src="../assets/img/hearthstone.png">HearthStone</a>
+      <a href="index.php?game=overwatch" class="col-4"><img src="../assets/img/overwatch.png">Overwatch</a>
+      <a href="index.php?game=starcraft" class="col-4"><img src="../assets/img/starcraft.png">Starcraft</a>
+      <a href="index.php?game=diablo" class="col-4"><img src="../assets/img/diablo.png">Diablo 3</a>
   </b>
 </div>
 
