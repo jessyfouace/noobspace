@@ -13,7 +13,7 @@
           </div>
           <div class="col-md-9 col-12">
             <h1><?php echo $actu->getName(); ?></h1>
-            <p><?php echo $actu->getDescription(); ?></p>
+            <p><?php echo substr($actu->getDescription(), 0, 180) . "..."; ?></p>
             <div class="row col-12 m-0 p-0">
               <p><?php echo $actu->getDate(); ?></p>
               <p class="ml-auto">Part: <?php echo $actu->getCreator(); ?></p>
