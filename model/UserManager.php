@@ -11,7 +11,7 @@ class UserManager
     public function verifUser(User $user)
     {
         $query = $this->getBdd()->prepare('SELECT * FROM user WHERE name = :name');
-        $query->bindValue(':name', $user->getName(), PDO::PARAM_INT);
+        $query->bindValue(':name', $user->getName(), PDO::PARAM_STR);
         $query->execute();
         $users = $query->fetchAll(PDO::FETCH_ASSOC);
         foreach ($users as $getUser) {
@@ -22,7 +22,7 @@ class UserManager
     public function verifUserDispo(User $user)
     {
         $query = $this->getBdd()->prepare('SELECT * FROM user WHERE name = :name');
-        $query->bindValue(':name', $user->getName(), PDO::PARAM_INT);
+        $query->bindValue(':name', $user->getName(), PDO::PARAM_STR);
         $query->execute();
         $users = $query->fetchAll(PDO::FETCH_ASSOC);
         foreach ($users as $getUser) {
@@ -32,10 +32,11 @@ class UserManager
 
     public function createUser(User $user)
     {
-        $query = $this->getBdd()->prepare('INSERT INTO user(name, password, verifConnect) VALUES(:name, :password, :verifConnect)');
+        $query = $this->getBdd()->prepare('INSERT INTO user(name, password, verifConnect, mail) VALUES(:name, :password, :verifConnect, :mail)');
         $query->bindValue(':name', $user->getName(), PDO::PARAM_STR);
         $query->bindValue(':password', $user->getPassword(), PDO::PARAM_STR);
         $query->bindValue(':verifConnect', $user->getVerifConnect(), PDO::PARAM_INT);
+        $query->bindValue(':mail', $user->getMail(), PDO::PARAM_STR);
         $query->execute();
     }
 
@@ -43,7 +44,23 @@ class UserManager
     {
         $updateBdd = $this->_bdd->prepare('UPDATE user SET verifConnect = :verifConnect WHERE id = :id');
         $updateBdd->bindValue(':id', $user->getId(), PDO::PARAM_INT);
-        $updateBdd->bindValue(':verifConnect', $user->getVerifConnect(), PDO::PARAM_STR);
+        $updateBdd->bindValue(':verifConnect', $user->getVerifConnect(), PDO::PARAM_INT);
+        $updateBdd->execute();
+    }
+
+    public function forgotPassword(User $user)
+    {
+        $updateBdd = $this->_bdd->prepare('UPDATE user SET password = :password WHERE name = :name');
+        $updateBdd->bindValue(':name', $user->getName(), PDO::PARAM_STR);
+        $updateBdd->bindValue(':password', $user->getPassword(), PDO::PARAM_STR);
+        $updateBdd->execute();
+    }
+
+    public function changeMail(User $user)
+    {
+        $updateBdd = $this->_bdd->prepare('UPDATE user SET mail = :mail WHERE name = :name');
+        $updateBdd->bindValue(':name', $user->getName(), PDO::PARAM_STR);
+        $updateBdd->bindValue(':mail', $user->getMail(), PDO::PARAM_STR);
         $updateBdd->execute();
     }
 
@@ -51,7 +68,7 @@ class UserManager
     {
         $updateBdd = $this->_bdd->prepare('UPDATE user SET admin = :admin WHERE id = :id');
         $updateBdd->bindValue(':id', $user->getId(), PDO::PARAM_INT);
-        $updateBdd->bindValue(':admin', $user->getAdmin(), PDO::PARAM_STR);
+        $updateBdd->bindValue(':admin', $user->getAdmin(), PDO::PARAM_INT);
         $updateBdd->execute();
     }
 
@@ -69,7 +86,7 @@ class UserManager
     public function getUserByName(string $name)
     {
         $query = $this->getBdd()->prepare('SELECT * FROM user WHERE name = :name');
-        $query->bindValue(':name', $name, PDO::PARAM_INT);
+        $query->bindValue(':name', $name, PDO::PARAM_STR);
         $query->execute();
         $user = $query->fetchAll(PDO::FETCH_ASSOC);
         foreach ($user as $getUser) {

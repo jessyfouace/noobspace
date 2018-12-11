@@ -4,8 +4,10 @@ class User
     protected $id;
     protected $name;
     protected $password;
+    protected $forgotPassword;
     protected $verifConnect;
     protected $admin;
+    protected $mail;
 
     public function __construct(array $array)
     {
@@ -60,6 +62,14 @@ class User
     public function getAdmin()
     {
         return $this->admin;
+    }
+
+    /**
+     * Get the value of mail
+     */
+    public function getMail()
+    {
+        return $this->mail;
     }
 
     /**
@@ -121,6 +131,18 @@ class User
     {
         $admin = (int) $admin;
         $this->admin = $admin;
+
+        return $this;
+    }
+
+    /**
+     * Set the mail
+     *
+     * @return  self
+     */
+    public function setMail(string $mail)
+    {
+        $this->mail = $mail;
 
         return $this;
     }

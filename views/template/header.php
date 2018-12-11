@@ -30,7 +30,6 @@
         <div class="collapse navbar-collapse" id="exCollapsingNavbar">
             <ul class="nav navbar-nav">
                 <li class="nav-item"><a href="index.php" class="nav-link">Actu</a></li>
-                <li class="nav-item"><a href="#" class="nav-link">Forum</a></li>
                 <li class="nav-item"><a href="#" class="nav-link">Top Jeux</a></li>
                 <?php if (!empty($_SESSION['admin'])) {
     if ($_SESSION['admin'] == 1) {
