@@ -14,7 +14,7 @@
 <div class="container">
     <div class="row m-y-2">
       <div class="col-lg-2 pull-lg-8 text-xs-center">
-          <div class="profileavatar col-12 col-md-2">
+          <div class="profileavatar col-12 col-lg-2">
             <p class="rounded-circle mx-auto text-center avatarprofil font-weight-bold colorwhite bgth"><?php echo substr($profil->getName(), 0, 1); ?></p>
           </div>
           </div>
@@ -38,14 +38,12 @@
                     <h4 class="m-y-2">Profil de <?php echo $profil->getName(); ?></h4>
                     <div class="row">
                         <div class="col-md-6">
-                            <h6>Rang</h6>
-                            <p>
-                                <?php if ($profil->getAdmin() == 1) {
+                            <h4 class="p-0">Rang <?php if ($profil->getAdmin() == 1) {
     echo "Administrateur";
 } else {
     echo "Utilisateur";
 }?>
-                            </p>
+                            </h4>
                             <h6>Description</h6>
                             <p>
                                 Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un imprimeur anonyme assembla ensemble des morceaux de texte pour réaliser
