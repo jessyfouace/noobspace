@@ -19,7 +19,7 @@
                             <input id="pwdconnection" type="password" class="form-control" placeholder="Votre mot de passe *" name="password" required/>
                         </div>
                         <div class="form-group">
-                            <input type="submit" class="btnSubmit" value="Connection" />
+                            <input type="submit" class="btn btn-primary" value="Connection" />
                         </div>
                     </form>
                     <form action="forgotpwd.php" method="post">
@@ -49,7 +49,7 @@
                             <input id="mail" type="email" class="form-control" placeholder="Adresse e-mail *" name="mail" required/>
                         </div>
                         <div class="form-group">
-                            <input type="submit" class="btnSubmit" value="Inscription" />
+                            <input type="submit" class="btn btn-primary" value="Inscription" />
                         </div>
                     </form>
                 </div>
